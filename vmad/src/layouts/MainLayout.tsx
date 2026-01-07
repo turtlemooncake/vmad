@@ -12,19 +12,18 @@ export default function MainLayout() {
   const concentratedLayouts = new Set(["/", "/me"]);
   const useConcentratedLayout = concentratedLayouts.has(currentPath);
 
-  if (currentPath)
-    return (
-      <div
-        className={clsx(
-          styles.layout,
-          useConcentratedLayout && styles.concentrated
-        )}
-      >
-        <div className={styles.container}>
-          <NavBar />
-          <Outlet />
-          <Footer />
-        </div>
+  return (
+    <div
+      className={clsx(
+        styles.layout,
+        useConcentratedLayout && styles.concentrated
+      )}
+    >
+      <div className={styles.container}>
+        <NavBar />
+        <Outlet />
+        <Footer />
       </div>
-    );
+    </div>
+  );
 }

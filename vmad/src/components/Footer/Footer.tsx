@@ -17,6 +17,13 @@ export default function Footer() {
       >
         [github]
       </a>
+      <a
+        href={`https://www.goodreads.com/user/show/173575958-skytherin`}
+        className={styles.link}
+        target="_blank"
+      >
+        [goodreads]
+      </a>
     </div>
   );
 }
