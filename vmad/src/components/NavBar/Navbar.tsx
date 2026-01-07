@@ -1,3 +1,4 @@
+import ScrambleHover from "../ui/scramble-hover";
 import styles from "./Navbar.module.scss";
 
 export default function NavBar() {
@@ -12,6 +13,13 @@ export default function NavBar() {
           </a>
         );
       })}
+      <ScrambleHover
+        text={"hellotheredouble"}
+        scrambleSpeed={70}
+        maxIterations={6}
+        sequential={true}
+        revealDirection="start"
+      />
     </div>
   );
 }
