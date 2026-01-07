@@ -7,9 +7,9 @@ export default function NavBar() {
     <div className={styles.container}>
       {links.map((link) => {
         return (
-          <div className={styles.link}>
-            <a href={`/${link}`}>[{link}]</a>
-          </div>
+          <a href={`/${link}`} className={styles.link}>
+            [{link}]
+          </a>
         );
       })}
     </div>

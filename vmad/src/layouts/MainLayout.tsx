@@ -1,14 +1,30 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar/Navbar";
 import styles from "./MainLayout.module.scss";
+import Footer from "../components/Footer/Footer";
+import { useLocation } from "react-router-dom";
+import clsx from "clsx";
 
 export default function MainLayout() {
-  return (
-    <div className={styles.layout}>
-      <div className={styles.container}>
-        <NavBar />
-        <Outlet />
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const concentratedLayouts = new Set(["/", "/me"]);
+  const useConcentratedLayout = concentratedLayouts.has(currentPath);
+
+  if (currentPath)
+    return (
+      <div
+        className={clsx(
+          styles.layout,
+          useConcentratedLayout && styles.concentrated
+        )}
+      >
+        <div className={styles.container}>
+          <NavBar />
+          <Outlet />
+          <Footer />
+        </div>
       </div>
-    </div>
-  );
+    );
 }
