@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Me from "./pages/Me/Me";
+import CV from "./pages/CV/CV";
 
 export const router = createBrowserRouter([
   {
@@ -9,6 +10,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <Me /> },
       { path: "/me", element: <Me /> },
+      { path: "/cv", element: <CV /> },
     ],
   },
 ]);

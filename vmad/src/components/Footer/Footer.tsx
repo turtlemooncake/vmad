@@ -12,7 +12,7 @@ export default function Footer() {
       url: "https://github.com/turtlemooncake",
     },
     {
-      name: "[linkedin]",
+      name: "[goodreads]",
       url: "https://www.goodreads.com/user/show/173575958-skytherin",
     },
   ];

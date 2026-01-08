@@ -13,7 +13,7 @@ export default function Me() {
           revealDirection="start"
         />
       </h1>
-      <h2 className={styles.subtitle}>
+      <p className={styles.subtitle}>
         <ScrambleHover
           text={"Currently: Seattle"}
           scrambleSpeed={50}
@@ -21,7 +21,7 @@ export default function Me() {
           sequential={true}
           revealDirection="start"
         />
-      </h2>
+      </p>
       <div className={styles.article}>
         <p>Hi, I'm Victoria.</p>
         <p>
@@ -35,14 +35,7 @@ export default function Me() {
         </p>
         <p>
           Feel free to take a tour of this site. If you would like to reach out,
-          feel free to email me{" "}
-          <a
-            href="mailto:vickitori109@gmail.com
-"
-          >
-            here
-          </a>
-          .
+          you can find me <a href="mailto:vickitori109@gmail.com">here</a>.
         </p>
       </div>
     </div>
