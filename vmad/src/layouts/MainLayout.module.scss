@@ -3,14 +3,17 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 64px;
-}
+  padding: 100px 64px;
 
-.concentrated {
-  padding: 100px 350px;
+  &.concentrated {
+    padding: 100px 350px;
+  }
 }
 
 .container {
   border: 1px solid magenta;
-  width: 700px;
+
+  &.concentrated {
+    width: 700px;
+  }
 }

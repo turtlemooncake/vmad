@@ -19,7 +19,12 @@ export default function MainLayout() {
         useConcentratedLayout && styles.concentrated
       )}
     >
-      <div className={styles.container}>
+      <div
+        className={clsx(
+          styles.container,
+          useConcentratedLayout && styles.concentrated
+        )}
+      >
         <NavBar />
         <Outlet />
         <Footer />

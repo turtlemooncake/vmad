@@ -6,19 +6,22 @@ export default function NavBar() {
 
   return (
     <div className={styles.container}>
-      {links.map((link) => {
-        return (
-          <a href={`/${link}`} className={styles.link}>
-            <ScrambleHover
-              text={`[${link}]`}
-              scrambleSpeed={50}
-              maxIterations={8}
-              sequential={true}
-              revealDirection="start"
-            />
-          </a>
-        );
-      })}
+      <div className={styles.navbar}>
+        {links.map((link) => {
+          return (
+            <a href={`/${link}`} className={styles.link}>
+              <ScrambleHover
+                text={`[${link}]`}
+                scrambleSpeed={50}
+                maxIterations={8}
+                sequential={true}
+                revealDirection="start"
+              />
+            </a>
+          );
+        })}
+      </div>
+      <button className={styles.button}></button>
     </div>
   );
 }
