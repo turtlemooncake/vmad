@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px 0px;
+}
+
+.title {
+  font-family: "DepartureMono", monospace;
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-family: "DepartureMono", monospace;
+  font-size: 1rem;
+  color: gray;
+}
+
+.article {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inline {
+  display: flex;
+}
+
+.game::after {
+  content: "";
+  background-image: url("/src/assets/icons/pgo-szn.png");
+  background-size: 100% 100%;
+  display: inline-block;
+
+  width: 24px;
+  height: 24px;
+
+  position: relative;
+  margin-left: 3px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  vertical-align: top;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+a {
+  color: blue;
+}

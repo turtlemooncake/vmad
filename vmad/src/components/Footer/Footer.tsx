@@ -1,29 +1,37 @@
+import ScrambleHover from "../ui/scramble-hover";
 import styles from "./Footer.module.scss";
 
 export default function Footer() {
+  const links = [
+    {
+      name: "[linkedin]",
+      url: "https://www.linkedin.com/in/victoria-li-70a31b1b2/",
+    },
+    {
+      name: "[github]",
+      url: "https://github.com/turtlemooncake",
+    },
+    {
+      name: "[linkedin]",
+      url: "https://www.goodreads.com/user/show/173575958-skytherin",
+    },
+  ];
+
   return (
     <div className={styles.container}>
-      <a
-        href={`https://www.linkedin.com/in/victoria-li-70a31b1b2/`}
-        className={styles.link}
-        target="_blank"
-      >
-        [linkedin]
-      </a>
-      <a
-        href={`https://github.com/turtlemooncake`}
-        className={styles.link}
-        target="_blank"
-      >
-        [github]
-      </a>
-      <a
-        href={`https://www.goodreads.com/user/show/173575958-skytherin`}
-        className={styles.link}
-        target="_blank"
-      >
-        [goodreads]
-      </a>
+      {links.map((link) => {
+        return (
+          <a href={link.url} className={styles.link}>
+            <ScrambleHover
+              text={link.name}
+              scrambleSpeed={50}
+              maxIterations={8}
+              sequential={true}
+              revealDirection="start"
+            />
+          </a>
+        );
+      })}
     </div>
   );
 }

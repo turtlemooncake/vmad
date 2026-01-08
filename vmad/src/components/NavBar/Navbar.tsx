@@ -9,17 +9,16 @@ export default function NavBar() {
       {links.map((link) => {
         return (
           <a href={`/${link}`} className={styles.link}>
-            [{link}]
+            <ScrambleHover
+              text={`[${link}]`}
+              scrambleSpeed={50}
+              maxIterations={8}
+              sequential={true}
+              revealDirection="start"
+            />
           </a>
         );
       })}
-      <ScrambleHover
-        text={"hellotheredouble"}
-        scrambleSpeed={70}
-        maxIterations={6}
-        sequential={true}
-        revealDirection="start"
-      />
     </div>
   );
 }

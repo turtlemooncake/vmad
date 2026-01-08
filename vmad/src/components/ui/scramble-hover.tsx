@@ -38,6 +38,19 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
   const [isScrambling, setIsScrambling] = useState(false);
   const [revealedIndices, setRevealedIndices] = useState(new Set<number>());
 
+  const [playOnMount, setPlayOnMount] = useState(true);
+
+  // NEW — trigger scramble once on page load
+  useEffect(() => {
+    setIsHovering(true);
+
+    const end = setTimeout(() => {
+      setIsHovering(false);
+    }, maxIterations * scrambleSpeed + 50);
+
+    return () => clearTimeout(end);
+  }, []);
+
   useEffect(() => {
     let interval: NodeJS.Timeout;
     let currentIteration = 0;

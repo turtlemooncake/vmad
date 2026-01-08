@@ -1,13 +1,50 @@
+import ScrambleHover from "../../components/ui/scramble-hover";
+import styles from "./Me.module.scss";
+
 export default function Me() {
   return (
-    <div>
-      <h1>help section</h1>
-      <p>
-        Using @extend lets you share a set of CSS properties from one selector
-        to another. In our example we’re going to create a simple series of
-        messaging for errors, warnings and successes using another feature which
-        goes hand in hand with extend, placeholder classes.{" "}
-      </p>
+    <div className={styles.container}>
+      <h1 className={styles.title}>
+        <ScrambleHover
+          text={"Victoria Li"}
+          scrambleSpeed={50}
+          maxIterations={8}
+          sequential={true}
+          revealDirection="start"
+        />
+      </h1>
+      <h2 className={styles.subtitle}>
+        <ScrambleHover
+          text={"Currently: Seattle"}
+          scrambleSpeed={50}
+          maxIterations={8}
+          sequential={true}
+          revealDirection="start"
+        />
+      </h2>
+      <div className={styles.article}>
+        <p>Hi, I'm Victoria.</p>
+        <p>
+          I spend a lot of time thinking about how things work under the hood.
+          I'm a big fan of open-source projects and the ancillary community
+          groups that maintain/support/hate-watch their respective stuff.
+        </p>
+        <p>
+          Currently, I'm a software engineer at Scopely (Niantic). You may have
+          played some of our <span className={styles.game}>games</span>.
+        </p>
+        <p>
+          Feel free to take a tour of this site. If you would like to reach out,
+          feel free to email me{" "}
+          <a
+            href="mailto:vickitori109@gmail.com
+"
+          >
+            here
+          </a>
+          .
+        </p>
+      </div>
     </div>
   );
 }
