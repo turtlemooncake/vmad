@@ -2,18 +2,19 @@
   display: flex;
   justify-content: space-between;
   border: 1px solid green;
+  width: 700px;
 }
 
 .navbar {
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .link {
   font-family: "DepartureMono", monospace;
-  color: black;
+  color: var(--navbar-color);
   text-decoration: none;
 }
 
@@ -31,4 +32,8 @@
   background-size: cover;
 
   cursor: pointer;
+
+  &.darkMode {
+    background-image: url("src/assets/icons/dark-mode-moon.png");
+  }
 }

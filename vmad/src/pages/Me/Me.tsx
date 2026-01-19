@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ScrambleHover from "../../components/ui/scramble-hover";
 import styles from "./Me.module.scss";
 
@@ -35,7 +36,7 @@ export default function Me() {
         </p>
         <p>
           Feel free to take a tour of this site. If you would like to reach out,
-          you can find me <a href="mailto:vickitori109@gmail.com">here</a>.
+          you can find me <Link to="mailto:vickitori109@gmail.com">here</Link>.
         </p>
       </div>
     </div>

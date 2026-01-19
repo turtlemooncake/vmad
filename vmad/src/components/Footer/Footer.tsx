@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ScrambleHover from "../ui/scramble-hover";
 import styles from "./Footer.module.scss";
 
@@ -21,7 +22,7 @@ export default function Footer() {
     <div className={styles.container}>
       {links.map((link) => {
         return (
-          <a href={link.url} className={styles.link}>
+          <Link to={link.url} className={styles.link} target="_blank">
             <ScrambleHover
               text={link.name}
               scrambleSpeed={50}
@@ -29,7 +30,7 @@ export default function Footer() {
               sequential={true}
               revealDirection="start"
             />
-          </a>
+          </Link>
         );
       })}
     </div>
