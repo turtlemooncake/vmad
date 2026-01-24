@@ -5,15 +5,15 @@
   width: 100%;
   padding: 100px 64px;
 
-  &.concentrated {
-    padding: 100px 350px;
-  }
+  // &.concentrated {
+  //   padding: 100px 350px;
+  // }
 }
 
 .container {
   border: 1px solid magenta;
 
   &.concentrated {
-    width: 700px;
+    max-width: 700px;
   }
 }

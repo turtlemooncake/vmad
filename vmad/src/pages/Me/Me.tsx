@@ -32,7 +32,7 @@ export default function Me() {
         </p>
         <p>
           Currently, I'm a software engineer at Scopely (Niantic). You may have
-          played some of our <span className={styles.game}>games</span>.
+          played some of our <span className={styles.game}>games</span> .
         </p>
         <p>
           Feel free to take a tour of this site. If you would like to reach out,

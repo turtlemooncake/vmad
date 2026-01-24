@@ -11,6 +11,8 @@ export default function NavBar() {
     document.documentElement.getAttribute("data-theme") || "light",
   );
 
+  const [showMobileNav, setShowMobileNav] = useState(false);
+
   const switchMode = () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
     const newTheme = currentTheme === "light" ? "dark" : "light";
@@ -21,12 +23,18 @@ export default function NavBar() {
     setTheme(newTheme);
   };
 
+  const toggleMobileNav = () => {
+    const newState = !showMobileNav;
+    setShowMobileNav(newState);
+    console.log(`hamburger state ${newState}`);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.navbar}>
-        {links.map((link) => {
+        {links.map((link, idx) => {
           return (
-            <Link to={`/${link}`} className={styles.link}>
+            <Link to={`/${link}`} className={styles.link} key={idx}>
               <ScrambleHover
                 text={`[${link}]`}
                 scrambleSpeed={50}
@@ -38,6 +46,14 @@ export default function NavBar() {
           );
         })}
       </div>
+      {showMobileNav && <div>ham</div>}
+      <button
+        className={clsx(
+          styles.mobileNavbarBtn,
+          theme === "dark" && styles.darkMode,
+        )}
+        onClick={toggleMobileNav}
+      ></button>
       <button
         className={clsx(styles.button, theme === "dark" && styles.darkMode)}
         onClick={switchMode}

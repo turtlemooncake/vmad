@@ -20,9 +20,9 @@ export default function Footer() {
 
   return (
     <div className={styles.container}>
-      {links.map((link) => {
+      {links.map((link, idx) => {
         return (
-          <Link to={link.url} className={styles.link} target="_blank">
+          <Link to={link.url} className={styles.link} target="_blank" key={idx}>
             <ScrambleHover
               text={link.name}
               scrambleSpeed={50}

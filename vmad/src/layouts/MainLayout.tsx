@@ -16,13 +16,13 @@ export default function MainLayout() {
     <div
       className={clsx(
         styles.layout,
-        useConcentratedLayout && styles.concentrated
+        useConcentratedLayout && styles.concentrated,
       )}
     >
       <div
         className={clsx(
           styles.container,
-          useConcentratedLayout && styles.concentrated
+          useConcentratedLayout && styles.concentrated,
         )}
       >
         <NavBar />

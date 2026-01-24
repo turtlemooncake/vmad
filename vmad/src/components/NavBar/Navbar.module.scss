@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   border: 1px solid green;
-  width: 700px;
+  width: 100%;
 }
 
 .navbar {
@@ -10,6 +10,33 @@
   justify-content: start;
   align-items: center;
   gap: 20px;
+
+  @media (max-width: 650px) {
+    display: none;
+  }
+}
+
+.mobileNavbarBtn {
+  display: none;
+  @media (max-width: 650px) {
+    content: "";
+    background-image: url("src/assets/icons/hamburger-light.png");
+    background-size: 100% 100%;
+    width: 35px;
+    height: 35px;
+    border: 1px solid transparent;
+
+    display: inline-block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    cursor: pointer;
+  }
+
+  &.darkMode {
+    background-image: url("src/assets/icons/hamburger-dark.png");
+  }
 }
 
 .link {
