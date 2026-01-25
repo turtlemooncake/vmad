@@ -25,8 +25,8 @@ export default function Footer() {
           <Link to={link.url} className={styles.link} target="_blank" key={idx}>
             <ScrambleHover
               text={link.name}
-              scrambleSpeed={50}
-              maxIterations={8}
+              scrambleSpeed={70}
+              maxIterations={10}
               sequential={true}
               revealDirection="start"
             />

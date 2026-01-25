@@ -4,9 +4,9 @@ import styles from "./Navbar.module.scss";
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 
-export default function NavBar() {
-  const links = ["me", "resume", "posts", "books", "gallery"];
+const links = ["me", "resume", "posts", "books", "gallery"];
 
+export default function NavBar() {
   const [theme, setTheme] = useState(
     document.documentElement.getAttribute("data-theme") || "light",
   );
@@ -26,7 +26,6 @@ export default function NavBar() {
   const toggleMobileNav = () => {
     const newState = !showMobileNav;
     setShowMobileNav(newState);
-    console.log(`hamburger state ${newState}`);
   };
 
   return (
@@ -46,7 +45,13 @@ export default function NavBar() {
           );
         })}
       </nav>
-      {<MobileMenu show={showMobileNav} />}
+      {
+        <MobileMenu
+          show={showMobileNav}
+          theme={theme}
+          setShow={() => setShowMobileNav(false)}
+        />
+      }
       <button
         className={clsx(
           styles.mobileNavbar,
@@ -65,10 +70,12 @@ export default function NavBar() {
 
 type MobileMenuProps = {
   show: boolean;
+  theme: string;
+  setShow: () => void;
 };
 
 function MobileMenu(props: MobileMenuProps) {
-  const { show } = props;
+  const { show, theme, setShow } = props;
   const ref = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -88,7 +95,34 @@ function MobileMenu(props: MobileMenuProps) {
 
   return (
     <dialog ref={ref}>
-      <button>hi there</button>
+      <button
+        onClick={setShow}
+        className={clsx(
+          styles.mobileNavbar,
+          styles.close,
+          theme === "dark" && styles.darkMode,
+        )}
+      ></button>
+      <div className={clsx(styles.mobileNavbar, styles.nav)}>
+        {links.map((link, idx) => {
+          return (
+            <Link
+              to={`/${link}`}
+              className={styles.link}
+              key={idx}
+              onClick={setShow}
+            >
+              <ScrambleHover
+                text={`[${link}]`}
+                scrambleSpeed={70}
+                maxIterations={10}
+                sequential={true}
+                revealDirection="start"
+              />
+            </Link>
+          );
+        })}
+      </div>
     </dialog>
   );
 }
