@@ -9,7 +9,7 @@ export default function MainLayout() {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const concentratedLayouts = new Set(["/", "/me"]);
+  const concentratedLayouts = new Set(["/", "/me", "/resume"]);
   const useConcentratedLayout = concentratedLayouts.has(currentPath);
 
   return (
