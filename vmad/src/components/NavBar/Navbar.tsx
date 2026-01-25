@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ScrambleHover from "../ui/scramble-hover";
 import styles from "./Navbar.module.scss";
 import clsx from "clsx";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function NavBar() {
   const links = ["me", "resume", "posts", "books", "gallery"];
@@ -31,7 +31,7 @@ export default function NavBar() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.navbar}>
+      <nav className={styles.navbar}>
         {links.map((link, idx) => {
           return (
             <Link to={`/${link}`} className={styles.link} key={idx}>
@@ -45,11 +45,12 @@ export default function NavBar() {
             </Link>
           );
         })}
-      </div>
-      {showMobileNav && <div>ham</div>}
+      </nav>
+      {<MobileMenu show={showMobileNav} />}
       <button
         className={clsx(
-          styles.mobileNavbarBtn,
+          styles.mobileNavbar,
+          styles.btn,
           theme === "dark" && styles.darkMode,
         )}
         onClick={toggleMobileNav}
@@ -59,5 +60,35 @@ export default function NavBar() {
         onClick={switchMode}
       ></button>
     </div>
+  );
+}
+
+type MobileMenuProps = {
+  show: boolean;
+};
+
+function MobileMenu(props: MobileMenuProps) {
+  const { show } = props;
+  const ref = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = ref.current;
+    if (!dialog) return;
+
+    if (show && !dialog.open) {
+      dialog.showModal();
+    }
+
+    if (!show && dialog.open) {
+      dialog.close();
+    }
+  }, [show]);
+
+  if (!show) return null;
+
+  return (
+    <dialog ref={ref}>
+      <button>hi there</button>
+    </dialog>
   );
 }
