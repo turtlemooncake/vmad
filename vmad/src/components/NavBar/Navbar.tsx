@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ScrambleHover from "../ui/scramble-hover";
 import styles from "./Navbar.module.scss";
 import clsx from "clsx";
@@ -28,12 +28,22 @@ export default function NavBar() {
     setShowMobileNav(newState);
   };
 
+  const location = useLocation();
+  const currentPath = location.pathname.split("/")[1];
+
   return (
     <div className={styles.container}>
       <nav className={styles.navbar}>
         {links.map((link, idx) => {
           return (
-            <Link to={`/${link}`} className={styles.link} key={idx}>
+            <Link
+              to={`/${link}`}
+              className={clsx(
+                styles.link,
+                link === currentPath && styles.current,
+              )}
+              key={idx}
+            >
               <ScrambleHover
                 text={`[${link}]`}
                 scrambleSpeed={50}
@@ -45,13 +55,11 @@ export default function NavBar() {
           );
         })}
       </nav>
-      {
-        <MobileMenu
-          show={showMobileNav}
-          theme={theme}
-          setShow={() => setShowMobileNav(false)}
-        />
-      }
+      <MobileMenu
+        show={showMobileNav}
+        theme={theme}
+        setShow={() => setShowMobileNav(false)}
+      />
       <button
         className={clsx(
           styles.mobileNavbar,
@@ -112,13 +120,7 @@ function MobileMenu(props: MobileMenuProps) {
               key={idx}
               onClick={setShow}
             >
-              <ScrambleHover
-                text={`[${link}]`}
-                scrambleSpeed={70}
-                maxIterations={10}
-                sequential={true}
-                revealDirection="start"
-              />
+              <ScrambleHover text={`[${link}]`} revealDirection="start" />
             </Link>
           );
         })}

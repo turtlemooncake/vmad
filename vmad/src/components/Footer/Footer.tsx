@@ -23,13 +23,7 @@ export default function Footer() {
       {links.map((link, idx) => {
         return (
           <Link to={link.url} className={styles.link} target="_blank" key={idx}>
-            <ScrambleHover
-              text={link.name}
-              scrambleSpeed={70}
-              maxIterations={10}
-              sequential={true}
-              revealDirection="start"
-            />
+            <ScrambleHover text={link.name} />
           </Link>
         );
       })}

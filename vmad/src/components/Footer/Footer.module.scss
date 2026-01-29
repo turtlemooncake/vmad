@@ -14,7 +14,7 @@
 }
 
 .link {
-  font-family: "DepartureMono", monospace;
+  font-family: var(--font-family-pixel);
   color: var(--footer-color);
   text-decoration: none;
 }

@@ -15,6 +15,7 @@
   --footer-color: black;
   --me-subtitle-color: gray;
   --me-link-color: #ba6b2a;
+  --font-family-pixel: "DepartureMono", monospace;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

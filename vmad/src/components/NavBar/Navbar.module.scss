@@ -17,9 +17,13 @@
 }
 
 .link {
-  font-family: "DepartureMono", monospace;
+  font-family: var(--font-family-pixel);
   color: var(--navbar-color);
   text-decoration: none;
+
+  &.current {
+    color: var(--me-link-color);
+  }
 }
 
 .mobileNavbar {

@@ -24,12 +24,12 @@ interface ScrambleHoverProps {
 const ScrambleHover: React.FC<ScrambleHoverProps> = ({
   text,
   scrambleSpeed = 50,
-  maxIterations = 10,
+  maxIterations = 8,
   useOriginalCharsOnly = false,
   characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+",
   className,
   scrambledClassName,
-  sequential = false,
+  sequential = true,
   revealDirection = "start",
   ...props
 }) => {
@@ -44,9 +44,12 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
   useEffect(() => {
     setIsHovering(true);
 
-    const end = setTimeout(() => {
-      setIsHovering(false);
-    }, maxIterations * scrambleSpeed + 50);
+    const end = setTimeout(
+      () => {
+        setIsHovering(false);
+      },
+      maxIterations * scrambleSpeed + 50,
+    );
 
     return () => clearTimeout(end);
   }, []);
@@ -191,7 +194,7 @@ const ScrambleHover: React.FC<ScrambleHoverProps> = ({
             className={clsx(
               revealedIndices.has(index) || !isScrambling || !isHovering
                 ? className
-                : scrambledClassName
+                : scrambledClassName,
             )}
           >
             {char}

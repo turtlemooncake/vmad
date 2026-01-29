@@ -1,28 +1,11 @@
 import { Link } from "react-router-dom";
-import ScrambleHover from "../../components/ui/scramble-hover";
 import styles from "./Me.module.scss";
+import Title from "../../components/Title/Title";
 
 export default function Me() {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>
-        <ScrambleHover
-          text={"Victoria Li"}
-          scrambleSpeed={50}
-          maxIterations={8}
-          sequential={true}
-          revealDirection="start"
-        />
-      </h1>
-      <p className={styles.subtitle}>
-        <ScrambleHover
-          text={"Currently: Seattle"}
-          scrambleSpeed={50}
-          maxIterations={8}
-          sequential={true}
-          revealDirection="start"
-        />
-      </p>
+      <Title />
       <div className={styles.article}>
         <p>Hi, I'm Victoria.</p>
         <p>
