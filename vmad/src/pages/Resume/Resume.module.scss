@@ -12,5 +12,23 @@
 .experience {
   &.title {
     font-family: var(--font-family-pixel);
+
+    &.box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media (max-width: 650px) {
+        flex-direction: column;
+      }
+    }
   }
+}
+
+.body {
+  font-family: var(--font-family-pixel);
+}
+
+.date {
+  color: var(--me-subtitle-color);
 }

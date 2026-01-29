@@ -29,7 +29,10 @@ export default function NavBar() {
   };
 
   const location = useLocation();
-  const currentPath = location.pathname.split("/")[1];
+  let currentPath = location.pathname.split("/")[1];
+  if (currentPath === "") {
+    currentPath = "me";
+  }
 
   return (
     <div className={styles.container}>
@@ -59,6 +62,7 @@ export default function NavBar() {
         show={showMobileNav}
         theme={theme}
         setShow={() => setShowMobileNav(false)}
+        location={currentPath}
       />
       <button
         className={clsx(
@@ -80,6 +84,7 @@ type MobileMenuProps = {
   show: boolean;
   theme: string;
   setShow: () => void;
+  location: string;
 };
 
 function MobileMenu(props: MobileMenuProps) {
@@ -116,7 +121,10 @@ function MobileMenu(props: MobileMenuProps) {
           return (
             <Link
               to={`/${link}`}
-              className={styles.link}
+              className={clsx(
+                styles.link,
+                link === props.location && styles.current,
+              )}
               key={idx}
               onClick={setShow}
             >
