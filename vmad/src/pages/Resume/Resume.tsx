@@ -18,9 +18,14 @@ export default function Resume() {
 }
 
 Resume.Body = () => {
+  const data = ["hi there this is my blurb"];
   return (
     <div className={styles.body}>
-      <Resume.ExpTitle />
+      <Resume.ExpTitle
+        title={"Scopely (Niantic)"}
+        date={"Sep 2023 - Present"}
+      />
+      <Resume.ExpBody data={data} />
       {/* <ScrambleHover
         text={"Scopely (Niantic)"}
         className={clsx(styles.experience, styles.title)}
@@ -39,14 +44,35 @@ Resume.Body = () => {
   );
 };
 
-Resume.ExpTitle = () => {
+interface ExpTitleProps {
+  title: string;
+  date: string;
+}
+
+Resume.ExpTitle = ({ title, date }: ExpTitleProps) => {
   return (
     <div className={clsx(styles.experience, styles.title, styles.box)}>
       <ScrambleHover
-        text={"Scopely (Niantic)"}
+        text={title}
         className={clsx(styles.experience, styles.title)}
       />
-      <span className={styles.date}>Sep 2023 - Present</span>
+      <span className={styles.date}>{date}</span>
+    </div>
+  );
+};
+
+interface ExpBodyProps {
+  data: string[];
+}
+
+Resume.ExpBody = ({ data }: ExpBodyProps) => {
+  return (
+    <div className={clsx(styles.experience, styles.body)}>
+      <ul>
+        {data.map((description) => {
+          return <li>{description}</li>;
+        })}
+      </ul>
     </div>
   );
 };

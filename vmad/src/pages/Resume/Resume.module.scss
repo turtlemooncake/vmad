@@ -23,6 +23,12 @@
       }
     }
   }
+
+  &.body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding-left: 20px;
+    padding-right: 100px;
+  }
 }
 
 .body {
@@ -31,4 +37,14 @@
 
 .date {
   color: var(--me-subtitle-color);
+}
+
+ul {
+  list-style-type: none; /* Removes default bullets */
+}
+
+li::before {
+  content: "🥞"; /* Adds a pancake emoticon */
+  margin-right: 10px; /* Adds space between the bullet and the text */
+  /* Additional styling for positioning and alignment */
 }
