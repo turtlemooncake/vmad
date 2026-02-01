@@ -60,35 +60,26 @@ export default function NavBar() {
       </nav>
       <MobileMenu
         show={showMobileNav}
-        theme={theme}
         setShow={() => setShowMobileNav(false)}
         location={currentPath}
       />
       <button
-        className={clsx(
-          styles.mobileNavbar,
-          styles.btn,
-          theme === "dark" && styles.darkMode,
-        )}
+        className={clsx(styles.mobileNavbar, styles.btn)}
         onClick={toggleMobileNav}
       ></button>
-      <button
-        className={clsx(styles.button, theme === "dark" && styles.darkMode)}
-        onClick={switchMode}
-      ></button>
+      <button className={styles.button} onClick={switchMode}></button>
     </div>
   );
 }
 
 type MobileMenuProps = {
   show: boolean;
-  theme: string;
   setShow: () => void;
   location: string;
 };
 
 function MobileMenu(props: MobileMenuProps) {
-  const { show, theme, setShow } = props;
+  const { show, setShow } = props;
   const ref = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -110,11 +101,7 @@ function MobileMenu(props: MobileMenuProps) {
     <dialog ref={ref}>
       <button
         onClick={setShow}
-        className={clsx(
-          styles.mobileNavbar,
-          styles.close,
-          theme === "dark" && styles.darkMode,
-        )}
+        className={clsx(styles.mobileNavbar, styles.close)}
       ></button>
       <div className={clsx(styles.mobileNavbar, styles.nav)}>
         {links.map((link, idx) => {

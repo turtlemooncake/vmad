@@ -18,28 +18,32 @@ export default function Resume() {
 }
 
 Resume.Body = () => {
-  const data = ["hi there this is my blurb"];
+  const nianticJob = [
+    "Working on web features related to the Pikmin Bloom and Monster Hunter Now game websites and webstores.",
+    "Own and maintain the GPDR process for Pokémon GO, PB, and MHN, which is responsible for player data access and data deletion.",
+  ];
+  const nianticIntern = [
+    "Created backend logic to resize uploaded player images",
+  ];
   return (
     <div className={styles.body}>
       <Resume.ExpTitle
         title={"Scopely (Niantic)"}
+        date={""}
+        useScramble={true}
+      />
+      <Resume.ExpTitle
+        title={"SWE"}
         date={"Sep 2023 - Present"}
+        useScramble={false}
       />
-      <Resume.ExpBody data={data} />
-      {/* <ScrambleHover
-        text={"Scopely (Niantic)"}
-        className={clsx(styles.experience, styles.title)}
+      <Resume.ExpBody data={nianticJob} />
+      <Resume.ExpTitle
+        title={"SWE Intern"}
+        date={"May 2022 - Aug 2022"}
+        useScramble={false}
       />
-      <h3>Software Engineer</h3>
-      <ul>
-        <li>Webfusion</li>
-        <li>Trust & Safety</li>
-      </ul>
-      <ScrambleHover
-        text={"NW Mutual"}
-        className={clsx(styles.experience, styles.title)}
-      />
-      <h3>Software Engineer</h3> */}
+      <Resume.ExpBody data={nianticIntern} />
     </div>
   );
 };
@@ -47,16 +51,20 @@ Resume.Body = () => {
 interface ExpTitleProps {
   title: string;
   date: string;
+  useScramble: boolean;
 }
 
-Resume.ExpTitle = ({ title, date }: ExpTitleProps) => {
+Resume.ExpTitle = ({ title, date, useScramble }: ExpTitleProps) => {
   return (
     <div className={clsx(styles.experience, styles.title, styles.box)}>
-      <ScrambleHover
-        text={title}
-        className={clsx(styles.experience, styles.title)}
-      />
-      <span className={styles.date}>{date}</span>
+      {useScramble && (
+        <ScrambleHover
+          text={title}
+          className={clsx(styles.experience, styles.title)}
+        />
+      )}
+      {!useScramble && <h4 className={styles.jobTitle}>{title}</h4>}
+      {date && <span className={styles.date}>{date}</span>}
     </div>
   );
 };

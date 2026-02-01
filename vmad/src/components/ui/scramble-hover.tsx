@@ -24,7 +24,7 @@ interface ScrambleHoverProps {
 const ScrambleHover: React.FC<ScrambleHoverProps> = ({
   text,
   scrambleSpeed = 50,
-  maxIterations = 8,
+  maxIterations = 12,
   useOriginalCharsOnly = false,
   characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+",
   className,

@@ -30,7 +30,7 @@
   &.btn {
     display: none;
     @media (max-width: 650px) {
-      background-image: url("src/assets/icons/hamburger-light.png");
+      background-image: var(--navbar-mobile-hamburger-image);
       background-size: 100% 100%;
       width: 35px;
       height: 35px;
@@ -43,14 +43,10 @@
 
       cursor: pointer;
     }
-
-    &.darkMode {
-      background-image: url("src/assets/icons/hamburger-dark.png");
-    }
   }
 
   &.close {
-    background-image: url("src/assets/icons/x-light.png");
+    background-image: var(--navbar-mobile-close-image);
     background-size: 100% 100%;
     width: 35px;
     height: 35px;
@@ -62,10 +58,6 @@
     background-size: cover;
 
     cursor: pointer;
-
-    &.darkMode {
-      background-image: url("src/assets/icons/x-dark.png");
-    }
   }
 
   &.nav {
@@ -88,7 +80,7 @@ dialog {
 }
 
 .button {
-  background-image: url("src/assets/icons/light-mode-moon.png");
+  background-image: var(--navbar-dark-mode-switch-image);
   background-size: 100% 100%;
   width: 35px;
   height: 35px;
@@ -100,8 +92,4 @@ dialog {
   background-size: cover;
 
   cursor: pointer;
-
-  &.darkMode {
-    background-image: url("src/assets/icons/dark-mode-moon.png");
-  }
 }
