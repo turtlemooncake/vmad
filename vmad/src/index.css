@@ -20,6 +20,7 @@
   --navbar-mobile-hamburger-image: url("src/assets/icons/hamburger-light.png");
   --navbar-mobile-close-image: url("src/assets/icons/x-light.png");
   --resume-bullet-point-image: url("src/assets/icons/arrow-light-mode.png");
+  --resume-job-title-highlight-color: rgb(240, 214, 68);
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -53,6 +54,7 @@
   --navbar-mobile-hamburger-image: url("src/assets/icons/hamburger-dark.png");
   --navbar-mobile-close-image: url("src/assets/icons/x-dark.png");
   --resume-bullet-point-image: url("src/assets/icons/arrow-dark-mode.png");
+  --resume-job-title-highlight-color: rgb(239, 230, 178);
 }
 
 /* reset box-sizing; prevent overflow */

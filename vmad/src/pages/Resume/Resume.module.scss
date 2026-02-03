@@ -32,14 +32,23 @@
   }
 }
 
+.job {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .jobTitle {
   font-family: var(--font-family-pixel);
   font-size: 1rem;
   color: var(--me-subtitle-color);
 }
 
-.body {
+.bodyContainer {
   font-family: var(--font-family-pixel);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .date {
@@ -66,4 +75,8 @@ li::before {
   background-size: cover;
 
   margin-right: 7px;
+}
+
+mark {
+  background-color: var(--resume-job-title-highlight-color);
 }
