@@ -157,8 +157,8 @@ Resume.ExpBody = ({ data }: ExpBodyProps) => {
   return (
     <div className={clsx(styles.experience, styles.body)}>
       <ul>
-        {data.map((description) => {
-          return <li>{description}</li>;
+        {data.map((description, idx) => {
+          return <li key={idx}>{description}</li>;
         })}
       </ul>
     </div>
