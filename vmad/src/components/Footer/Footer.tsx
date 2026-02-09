@@ -1,8 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ScrambleHover from "../ui/scramble-hover";
 import styles from "./Footer.module.scss";
+import clsx from "clsx";
 
 export default function Footer() {
+  const location = useLocation();
+  // const location = useLocation();
+  // const currentPath = location.pathname;
+  // const concentratedLayouts = new Set(["/", "/me", "/resume", "/posts"]);
+  const currentPath = location.pathname;
+  const botFooter = new Set(["/", "/me", "/posts"]);
+  const forceFooterBottomForMobile = botFooter.has(currentPath);
+
   const links = [
     {
       name: "[linkedin]",
@@ -19,7 +28,12 @@ export default function Footer() {
   ];
 
   return (
-    <div className={styles.container}>
+    <div
+      className={clsx(
+        styles.container,
+        forceFooterBottomForMobile && styles.goBottom,
+      )}
+    >
       {links.map((link, idx) => {
         return (
           <Link to={link.url} className={styles.link} target="_blank" key={idx}>

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { postMdLoader } from "../../util/post";
+import { docModules } from "../../util/post";
 
 export default function PostsLanding() {
-  const slugs = Object.keys(postMdLoader).map((path) =>
+  const slugs = Object.keys(docModules).map((path) =>
     path.split("/").pop()?.replace(".md", ""),
   );
 

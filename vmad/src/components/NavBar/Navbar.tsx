@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 const links = ["me", "resume", "posts", "books", "gallery"];
 
 export default function NavBar() {
+  // eslint-disable-next-line
   const [theme, setTheme] = useState(
     document.documentElement.getAttribute("data-theme") || "light",
   );

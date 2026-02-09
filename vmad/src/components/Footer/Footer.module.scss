@@ -4,9 +4,9 @@
   justify-content: end;
   align-items: center;
   width: 100%;
+  padding-top: 30px;
 
   @media (max-width: 650px) {
-    //position: fixed;
     justify-content: end;
     bottom: 20px;
     right: 10px;
@@ -17,4 +17,13 @@
   font-family: var(--font-family-pixel);
   color: var(--footer-color);
   text-decoration: none;
+}
+
+.goBottom {
+  @media (max-width: 650px) {
+    position: absolute;
+    justify-content: end;
+    bottom: 20px;
+    right: 10px;
+  }
 }

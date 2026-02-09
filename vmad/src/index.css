@@ -16,10 +16,10 @@
   --me-subtitle-color: gray;
   --me-link-color: #ba6b2a;
   --font-family-pixel: "DepartureMono", monospace;
-  --navbar-dark-mode-switch-image: url("src/assets/icons/light-mode-moon.png");
-  --navbar-mobile-hamburger-image: url("src/assets/icons/hamburger-light.png");
-  --navbar-mobile-close-image: url("src/assets/icons/x-light.png");
-  --resume-bullet-point-image: url("src/assets/icons/arrow-light-mode.png");
+  --navbar-dark-mode-switch-image: url("./assets/icons/light-mode-moon.png");
+  --navbar-mobile-hamburger-image: url("./assets/icons/hamburger-light.png");
+  --navbar-mobile-close-image: url("./assets/icons/x-light.png");
+  --resume-bullet-point-image: url("./assets/icons/arrow-light-mode.png");
   --resume-job-title-highlight-color: rgb(240, 214, 68);
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -50,10 +50,10 @@
   --me-subtitle-color: lightgray;
   --me-link-color: #dbac54;
 
-  --navbar-dark-mode-switch-image: url("src/assets/icons/dark-mode-moon.png");
-  --navbar-mobile-hamburger-image: url("src/assets/icons/hamburger-dark.png");
-  --navbar-mobile-close-image: url("src/assets/icons/x-dark.png");
-  --resume-bullet-point-image: url("src/assets/icons/arrow-dark-mode.png");
+  --navbar-dark-mode-switch-image: url("./assets/icons/dark-mode-moon.png");
+  --navbar-mobile-hamburger-image: url(".assets/icons/hamburger-dark.png");
+  --navbar-mobile-close-image: url("./assets/icons/x-dark.png");
+  --resume-bullet-point-image: url("./assets/icons/arrow-dark-mode.png");
   --resume-job-title-highlight-color: rgb(239, 230, 178);
 }
 

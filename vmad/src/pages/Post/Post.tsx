@@ -1,27 +1,20 @@
-import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useParams } from "react-router-dom";
-import { postMdLoader } from "../../util/post";
+import { getAllDocs } from "../../util/post";
+import clsx from "clsx";
+import styles from "./Post.module.scss";
 
 export default function Post() {
   const { slug } = useParams();
-  const [content, setContent] = useState("");
-  useEffect(() => {
-    const loadPost = async () => {
-      const path = `../posts/${slug}.md`;
-      const file = postMdLoader[path];
+  if (!slug) return;
 
-      if (file) {
-        const raw = await file();
-        setContent(raw as string);
-      }
-    };
-    loadPost();
-  }, [slug]);
+  const post = getAllDocs();
+  console.log(post);
 
   return (
-    <div>
-      <ReactMarkdown>{content}</ReactMarkdown>
+    <div className={clsx(styles.content)}>
+      {/* <ReactMarkdown>{}</ReactMarkdown> */}
+      hi there
     </div>
   );
 }

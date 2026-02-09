@@ -1,0 +1,23 @@
+---
+title: Italy 2026
+slug: /italy-2026
+date: 02-08-2026
+---
+
+# Italy 2026
+
+For seven days in January, I went on vacation in Italy. Alongside me were my parents and brother, though we travelled there separately. This would be their first time on the European continent. My mom, a big fan of European desserts and architecture, was super looking forward to finally seeing what the real deal was all about. Before our travel day, we watched the 2004 classic _EuroTrip_ to get in the right state of mind.
+
+Italy wasn't a random choice. My brother was studying abroad at the Università di Bologna for the spring semester and my parents decided we should all go to "settle him in." We had about two days of overlap before his program started, and then it was hasta la vista. Using Bologna as our base camp, we took day trips to Rome, Florence, and Venice.
+
+Our itinerary was Reddit's greatest hits of those major cities. The Colosseum, the Vatican, the Duomo, the Doge Palazzo, the \_\_\_\_ etc. They were all great, but I don't think I can explain them better than the OPs and travel bloggers we took inspiration from.
+
+Chinese Italians were something I did not expect to see. In the U.S, _ABC_ is a term used to describe people of chinese descent who are born in the U.S. Think second generation and onwards. The same is very true with Italy as well. It's silly in retrospect to be surprised, as China boosts a population of over 1B and naturally there are other countries other than the U.S to immigrate to. Thus, in Italy, Chinese restaurants were not called _Jade Palace_ or _Green Tea Restaurant_, but rather _Ravioli 2 Torri_ and _Bao Bros Inc_ and _Tang Dynasty_: familiar and different at the same time. A number of the waiters - some of which were teenagers, kids who looked not too dissimilar from my friends back home - only spoke Italian or broken Mandarin.
+
+As with the U.S, there were also a number of Chinese internationals living temporarily or permanently in Italy. At the first cafe we went to in Bologna, a kind Chinese high school exchange student helped us order. In Florence, several of our fellow commuters were Chinese. We even saw a BYD car dealership.
+
+On our second day in Italy, my parents turned to me and said, "maybe we should retire here." Of course, they loved the laid back culture and gastronomical creations of the country, but Italy also reminded them of China. Not only in the people, but the way that neighbors hung clothes out to dry and the chitter chatter of outdoor dinner discussions at 9pm and how cheap simple foods such as bread and salty meats and coffee and orange sodas were.
+
+Maybe a more apt way to say this is that in the whole world, only the U.S is like the U.S (except for our northern neighbor).
+
+To conclude: yes I had a good time. Yes, I will be back.
