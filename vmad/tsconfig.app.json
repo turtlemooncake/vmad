@@ -24,5 +24,9 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "mdx": {
+    // Enable strict type checking in MDX files.
+    "checkMdx": true
+  }
 }
