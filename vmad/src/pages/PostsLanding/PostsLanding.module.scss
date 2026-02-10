@@ -1,0 +1,37 @@
+.list {
+  padding: 30px 0px;
+
+  ul {
+    list-style-type: none; /* Removes default bullets */
+    align-items: center;
+  }
+
+  li {
+    border-bottom: 1px solid black;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  font-family: var(--font-family-pixel);
+  padding-bottom: 20px;
+}
+
+.link {
+  font-size: 1rem;
+  font-family: var(--font-family-pixel);
+  padding: 10px 0px;
+
+  p {
+    font-size: 0.9rem;
+    color: var(--me-subtitle-color);
+  }
+}
+
+.link:hover {
+  background-color: var(--posts-hover-color);
+}

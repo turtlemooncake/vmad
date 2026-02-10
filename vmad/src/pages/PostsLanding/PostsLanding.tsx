@@ -1,18 +1,21 @@
 import { Link } from "react-router-dom";
-import { docModules } from "../../util/post";
+import { allDocs } from "../../util/post";
+import styles from "./PostsLanding.module.scss";
+import ScrambleHover from "../../components/ui/scramble-hover";
 
 export default function PostsLanding() {
-  const slugs = Object.keys(docModules).map((path) =>
-    path.split("/").pop()?.replace(".md", ""),
-  );
-
-  console.log(slugs);
   return (
-    <div>
+    <div className={styles.list}>
+      <ScrambleHover text={"Posts"} className={styles.title} />
       <ul>
-        {slugs.map((slug) => (
-          <li key={slug}>
-            <Link to={`/posts/${slug}`}>{slug}</Link>
+        {allDocs.map((doc, idx) => (
+          <li key={idx}>
+            <Link to={`/posts/${doc.slug}`}>
+              <div className={styles.link}>
+                <h4>{doc.meta["title"]}</h4>
+                <p>{doc.meta["date"]}</p>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>

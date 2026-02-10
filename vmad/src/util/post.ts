@@ -1,18 +1,18 @@
 // The 'posts' database
-export const docModules = import.meta.glob("../posts/*.md", {
-  query: "?raw",
-  import: "default",
+export const docModules = import.meta.glob("../posts/*.mdx", {
   eager: true,
 });
 
-// export const getAllDocs = () => {
-//   return Object.entries(docModules).map(([path, raw]: [string, any]) => {
-//     const { data, content } = matter(raw);
-//     const slug = path.split("/").pop()?.replace(".md", "");
-//     return {
-//       slug,
-//       data,
-//       content,
-//     };
-//   });
-// };
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const allDocs = Object.entries(docModules)
+  .map(([path, mod]: any) => {
+    return {
+      slug: path.split("/").pop().replace(".mdx", ""),
+      meta: mod.meta,
+      Component: mod.default,
+    };
+  })
+  .sort(
+    (a, b) =>
+      new Date(b.meta["date"]).getTime() - new Date(a.meta["date"]).getTime(),
+  );
