@@ -4,7 +4,7 @@ import styles from "./Navbar.module.scss";
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 
-const links = ["me", "resume", "posts", "books", "gallery"];
+const links = ["me", "resume", "posts", "books"];
 
 export default function NavBar() {
   // eslint-disable-next-line
@@ -30,21 +30,28 @@ export default function NavBar() {
   };
 
   const location = useLocation();
-  let currentPath = location.pathname.split("/")[1];
-  if (currentPath === "") {
-    currentPath = "me";
+  const pathname = location.pathname;
+  let linkLocation = location.pathname.split("/")[1];
+  if (linkLocation === "") {
+    linkLocation = "me";
   }
+
+  const showPostBackBtn = pathname.includes("posts/");
+  console.log(linkLocation + " what is this");
 
   return (
     <div className={styles.container}>
       <nav className={styles.navbar}>
+        {showPostBackBtn && (
+          <Link to={"/posts"} relative="path" className={styles.back}></Link>
+        )}
         {links.map((link, idx) => {
           return (
             <Link
               to={`/${link}`}
               className={clsx(
                 styles.link,
-                link === currentPath && styles.current,
+                link === linkLocation && styles.current,
               )}
               key={idx}
             >
@@ -62,7 +69,7 @@ export default function NavBar() {
       <MobileMenu
         show={showMobileNav}
         setShow={() => setShowMobileNav(false)}
-        location={currentPath}
+        location={linkLocation}
       />
       <button
         className={clsx(styles.mobileNavbar, styles.btn)}

@@ -39,7 +39,6 @@
       display: inline-block;
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: cover;
 
       cursor: pointer;
     }
@@ -89,7 +88,24 @@ dialog {
   display: inline-block;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
 
   cursor: pointer;
+}
+
+.back {
+  background-image: var(--posts-back-btn);
+  background-size: 100% 100%;
+  width: 25px;
+  height: 25px;
+  border: 1px solid transparent;
+
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  @media (max-width: 650px) {
+    display: none;
+  }
 }
