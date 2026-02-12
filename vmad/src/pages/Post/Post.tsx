@@ -14,6 +14,7 @@ export default function Post() {
 
   return (
     <div className={clsx(styles.content)}>
+      <Link to={"/posts"} relative="path" className={styles.back}></Link>
       <Component />
     </div>
   );

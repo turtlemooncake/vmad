@@ -5,10 +5,34 @@
     font-size: 2rem;
     padding-bottom: 2rem;
     padding-top: 2rem;
+
+    @media (max-width: 650px) {
+      padding-top: 1rem;
+    }
   }
 
   p {
     padding-bottom: 1.25rem;
     font-size: 1rem;
+  }
+}
+
+.back {
+  background-image: var(--posts-back-btn);
+  background-size: 100% 100%;
+  width: 25px;
+  height: 25px;
+  border: 1px solid transparent;
+
+  display: none;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  margin-top: 10px;
+
+  @media (max-width: 650px) {
+    display: inline-block;
   }
 }

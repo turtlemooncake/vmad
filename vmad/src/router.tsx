@@ -4,6 +4,7 @@ import Me from "./pages/Me/Me";
 import Resume from "./pages/Resume/Resume";
 import PostsLanding from "./pages/PostsLanding/PostsLanding";
 import Post from "./pages/Post/Post";
+import BookShelf from "./pages/BookShelf/BookShelf";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
       { path: "/resume", element: <Resume /> },
       { path: "/posts", element: <PostsLanding /> },
       { path: "/posts/:slug", element: <Post /> },
+      { path: "/books", element: <BookShelf /> },
     ],
   },
 ]);
