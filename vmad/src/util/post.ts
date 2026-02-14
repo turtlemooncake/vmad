@@ -3,8 +3,8 @@ export const docModules = import.meta.glob("../posts/*.mdx", {
   eager: true,
 });
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const allDocs = Object.entries(docModules)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   .map(([path, mod]: any) => {
     return {
       slug: path.split("/").pop().replace(".mdx", ""),
