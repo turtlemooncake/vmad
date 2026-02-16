@@ -13,6 +13,8 @@ import gapple from "@/assets/bookshelf/mc-gapple-1.png";
 import enderEye from "@/assets/bookshelf/mc-ender-eye-blink.gif";
 
 export default function BookShelf() {
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+
   // Precompute stable heights + tilts
   const [bookSpines] = useState(() => {
     const width = 30 + Math.random() * 2; // fixed book width
