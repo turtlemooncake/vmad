@@ -9,20 +9,18 @@ interface BookSpineProps {
 }
 
 export default function BookSpine(props: BookSpineProps) {
-  // Use state if you want height/rotation to be stable per book
-  // const [stableHeight] = useState(props.height);
-  // const [stableRotation] = useState(props.rotation);
-
   return (
     <div
       className={styles.bookspine}
-      style={{
-        width: `${props.width}px`,
-        height: `${props.height}px`,
-        transform: `rotate(${props.rotation}deg)`,
-      }}
+      style={
+        {
+          width: `${props.width}px`,
+          height: `${props.height}px`,
+          "--rotation": `${props.rotation}deg`,
+        } as React.CSSProperties
+      }
     >
-      <img src={props.book.cover} width={50} height={80} />
+      <img src={props.book.cover} />
     </div>
   );
 }

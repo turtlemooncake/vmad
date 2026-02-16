@@ -9,6 +9,8 @@ import {
   type Book,
 } from "../../util/bookshelf";
 import styles from "./BookShelf.module.scss";
+import gapple from "@/assets/bookshelf/mc-gapple-1.png";
+import enderEye from "@/assets/bookshelf/mc-ender-eye-blink.gif";
 
 export default function BookShelf() {
   // Precompute stable heights + tilts
@@ -24,8 +26,8 @@ export default function BookShelf() {
     }> = [];
 
     books.forEach((book, i) => {
-      let height = randomHeight();
-      let rotation = getTilt(i, books.length, 5);
+      let height = randomHeight(80, 120);
+      let rotation = getTilt(i, books.length, 3);
 
       // Check collision with previous book
       if (i > 0) {
@@ -55,7 +57,7 @@ export default function BookShelf() {
       }
 
       result.push({ book, height, rotation, x, width });
-      x += width + 10; // move x forward for next book + 2px gap
+      x += width + 10; // move x forward for next book + _px gap
     });
     return result;
   });
@@ -63,14 +65,22 @@ export default function BookShelf() {
   return (
     <div className={styles.container}>
       <div className={styles.bookshelf}>
-        {bookSpines.map((book) => {
+        {bookSpines.map((book, idx) => {
           return (
-            <BookSpine
-              book={book.book}
-              width={book.width}
-              height={book.height}
-              rotation={book.rotation}
-            />
+            <>
+              {idx === 0 && (
+                <img src={enderEye} className={styles.bookstart}></img>
+              )}
+              <BookSpine
+                book={book.book}
+                width={book.width}
+                height={book.height}
+                rotation={book.rotation}
+              />
+              {idx === bookSpines.length - 1 && (
+                <img src={gapple} className={styles.bookend}></img>
+              )}
+            </>
           );
         })}
       </div>
