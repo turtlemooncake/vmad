@@ -11,6 +11,7 @@ import {
 import styles from "./BookShelf.module.scss";
 import gapple from "@/assets/bookshelf/mc-gapple-1.png";
 import enderEye from "@/assets/bookshelf/mc-ender-eye-blink.gif";
+import BookModal from "../../components/BookModal/BookModal";
 
 export default function BookShelf() {
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
@@ -78,6 +79,7 @@ export default function BookShelf() {
                 width={book.width}
                 height={book.height}
                 rotation={book.rotation}
+                onClick={() => setSelectedBook(book.book)}
               />
               {idx === bookSpines.length - 1 && (
                 <img src={gapple} className={styles.bookend}></img>
@@ -86,6 +88,10 @@ export default function BookShelf() {
           );
         })}
       </div>
+      <BookModal
+        isOpen={selectedBook !== null}
+        onClose={() => setSelectedBook(null)}
+      ></BookModal>
     </div>
   );
 }

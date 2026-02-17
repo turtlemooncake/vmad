@@ -6,6 +6,7 @@ interface BookSpineProps {
   width: number;
   height: number;
   rotation: number;
+  onClick: () => void;
 }
 
 export default function BookSpine(props: BookSpineProps) {
@@ -19,6 +20,7 @@ export default function BookSpine(props: BookSpineProps) {
           "--rotation": `${props.rotation}deg`,
         } as React.CSSProperties
       }
+      onClick={props.onClick}
     >
       <img src={props.book.cover} />
     </div>

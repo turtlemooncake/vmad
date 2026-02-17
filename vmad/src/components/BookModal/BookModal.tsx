@@ -4,7 +4,7 @@ import styles from "./BookModal.module.scss";
 interface BookModalProps {
   isOpen: boolean;
   onClose: () => void;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export default function BookModal({
@@ -18,18 +18,17 @@ export default function BookModal({
     const dialog = dialogRef.current;
     if (!dialog) return;
 
-    if (isOpen && !dialog.open) {
-      dialog.showModal();
-    }
-
-    if (!isOpen && dialog.open) {
-      dialog.close();
+    if (isOpen) {
+      if (!dialog.open) dialog.showModal();
+    } else {
+      if (dialog.open) dialog.close();
     }
   }, [isOpen]);
 
+  if (!isOpen) return null;
+
   return (
     <dialog ref={dialogRef} className={styles.modal} onClose={onClose}>
-      test book modal
       {children}
     </dialog>
   );
