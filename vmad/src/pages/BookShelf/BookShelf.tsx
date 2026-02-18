@@ -11,6 +11,7 @@ import {
 import styles from "./BookShelf.module.scss";
 import gapple from "@/assets/bookshelf/mc-gapple-1.png";
 import enderEye from "@/assets/bookshelf/mc-ender-eye-blink.gif";
+import enderDragon from "@/assets/bookshelf/ender-dragon-fly.gif";
 import BookModal from "../../components/BookModal/BookModal";
 import Book from "../../components/Book/Book";
 import ScrambleHover from "../../components/ui/scramble-hover";
@@ -70,6 +71,9 @@ export default function BookShelf() {
   return (
     <div className={styles.container}>
       <ScrambleHover text={"Bookshelf"} className={styles.title} />
+      <div className={styles.flySpace}>
+        <img src={enderDragon} className={styles.dragon}></img>
+      </div>
       <div className={styles.bookshelf}>
         {bookSpines.map((book, idx) => {
           return (

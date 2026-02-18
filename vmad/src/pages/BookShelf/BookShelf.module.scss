@@ -9,14 +9,62 @@
 
 .bookshelf {
   width: 100%;
-  //border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: baseline;
   gap: 7px;
   position: relative;
-  padding-top: 170px;
 }
+
+.flySpace {
+  width: 100%;
+  height: 135px;
+  //border: 1px solid red;
+  overflow: hidden;
+  position: relative;
+}
+
+.dragon {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  //animation: slideRightToLeft 30s linear infinite;
+  animation:
+    flyHorizontal 30s linear infinite,
+    flyVertical 10s ease-in-out infinite alternate;
+}
+
+@keyframes flyHorizontal {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -120px;
+  } /* offscreen left */
+}
+
+@keyframes flyVertical {
+  0% {
+    transform: translateY(-50%) translateY(0);
+  }
+  50% {
+    transform: translateY(-50%) translateY(-20px);
+  } /* up */
+  100% {
+    transform: translateY(-50%) translateY(20px);
+  } /* down */
+}
+
+// @keyframes slideRightToLeft {
+//   0% {
+//     left: 100%; // start completely outside on the right
+//   }
+//   100% {
+//     left: -100px; // end completely outside on the left
+//   }
+// }
 
 .bookshelf::after {
   content: "";
