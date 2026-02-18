@@ -28,6 +28,8 @@
   --posts-hover-color: rgb(105 105 105 / 0.1);
   --posts-back-btn: url("./assets/icons/post-back-btn-light-mode.png");
 
+  --book-modal-background-color: #fff;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -66,6 +68,8 @@
 
   --posts-hover-color: rgb(255 255 255 / 0.1);
   --posts-back-btn: url("./assets/icons/post-back-btn-dark-mode.png");
+
+  --book-modal-background-color: rgb(73, 73, 73);
 }
 
 /* reset box-sizing; prevent overflow */

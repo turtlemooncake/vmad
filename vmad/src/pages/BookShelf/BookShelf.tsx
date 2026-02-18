@@ -13,6 +13,7 @@ import gapple from "@/assets/bookshelf/mc-gapple-1.png";
 import enderEye from "@/assets/bookshelf/mc-ender-eye-blink.gif";
 import BookModal from "../../components/BookModal/BookModal";
 import Book from "../../components/Book/Book";
+import ScrambleHover from "../../components/ui/scramble-hover";
 
 export default function BookShelf() {
   const [selectedBook, setSelectedBook] = useState<BookData | null>(null);
@@ -68,6 +69,7 @@ export default function BookShelf() {
 
   return (
     <div className={styles.container}>
+      <ScrambleHover text={"Bookshelf"} className={styles.title} />
       <div className={styles.bookshelf}>
         {bookSpines.map((book, idx) => {
           return (

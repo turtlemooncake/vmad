@@ -2,9 +2,14 @@
   width: 100%;
 }
 
+.title {
+  font-size: 2rem;
+  font-family: var(--font-family-pixel);
+}
+
 .bookshelf {
   width: 100%;
-  border: 1px solid red;
+  //border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: baseline;
