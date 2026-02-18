@@ -4,7 +4,7 @@ import styles from "./Navbar.module.scss";
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 
-const links = ["me", "posts", "bookshelf", "resume"];
+const links = ["me", "bookshelf", "posts", "resume"];
 
 export default function NavBar() {
   // eslint-disable-next-line

@@ -15,7 +15,9 @@ export default function Me() {
         </p>
         <p>
           Currently, I'm a software engineer at Scopely (Niantic). You may have
-          played some of our <span className={styles.game}>games</span> .
+          played some of our <span className={styles.game}>games</span> . In my
+          free time, I read copious amounts of books - all genres, the longer
+          the better.
         </p>
         <p>
           Feel free to take a tour of this site. If you would like to reach out,
