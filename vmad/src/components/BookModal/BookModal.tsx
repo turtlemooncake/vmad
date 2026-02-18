@@ -25,10 +25,21 @@ export default function BookModal({
     }
   }, [isOpen]);
 
+  function handleClick(e: React.MouseEvent<HTMLDialogElement>) {
+    if (e.target === dialogRef.current) {
+      onClose();
+    }
+  }
+
   if (!isOpen) return null;
 
   return (
-    <dialog ref={dialogRef} className={styles.modal} onClose={onClose}>
+    <dialog
+      ref={dialogRef}
+      className={styles.modal}
+      onClose={onClose}
+      onClick={handleClick}
+    >
       {children}
     </dialog>
   );

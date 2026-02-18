@@ -9,6 +9,10 @@
   overflow: hidden;
 }
 
+.active {
+  transform: rotate(0) translateY(-8px);
+}
+
 .bookspine:hover {
   transform: rotate(0) translateY(-8px);
   transition: transform 0.15s ease-in-out;

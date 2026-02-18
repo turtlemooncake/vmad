@@ -1,11 +1,12 @@
-export interface Book {
+export interface BookData {
   title: string;
   author: string;
   cover: string;
+  blurb: string;
 }
 
 // get the book cover images
-const bookModules = import.meta.glob<Book>("/src/books/*.mdx", {
+const bookModules = import.meta.glob<BookData>("/src/books/*.mdx", {
   eager: true,
   import: "meta",
 });

@@ -6,22 +6,23 @@ import {
   getTilt,
   randomHeight,
   toRadians,
-  type Book,
+  type BookData,
 } from "../../util/bookshelf";
 import styles from "./BookShelf.module.scss";
 import gapple from "@/assets/bookshelf/mc-gapple-1.png";
 import enderEye from "@/assets/bookshelf/mc-ender-eye-blink.gif";
 import BookModal from "../../components/BookModal/BookModal";
+import Book from "../../components/Book/Book";
 
 export default function BookShelf() {
-  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const [selectedBook, setSelectedBook] = useState<BookData | null>(null);
 
   // Precompute stable heights + tilts
   const [bookSpines] = useState(() => {
     const width = 30 + Math.random() * 2; // fixed book width
     let x = 0; // track horizontal placement
     const result: Array<{
-      book: Book;
+      book: BookData;
       height: number;
       rotation: number;
       x: number;
@@ -80,6 +81,7 @@ export default function BookShelf() {
                 height={book.height}
                 rotation={book.rotation}
                 onClick={() => setSelectedBook(book.book)}
+                selectedBook={selectedBook}
               />
               {idx === bookSpines.length - 1 && (
                 <img src={gapple} className={styles.bookend}></img>
@@ -91,7 +93,9 @@ export default function BookShelf() {
       <BookModal
         isOpen={selectedBook !== null}
         onClose={() => setSelectedBook(null)}
-      ></BookModal>
+      >
+        {selectedBook && <Book book={selectedBook} />}
+      </BookModal>
     </div>
   );
 }
