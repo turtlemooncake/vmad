@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BookSpine from "../../components/BookSpine/BookSpine";
 import {
   books,
   getRightEdge,
   getTilt,
   randomHeight,
+  TABLET_SIZE,
   toRadians,
   type BookData,
 } from "../../util/bookshelf";
@@ -68,6 +69,19 @@ export default function BookShelf() {
     return result;
   });
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= TABLET_SIZE);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= TABLET_SIZE);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const visibleBooks = isMobile ? bookSpines.slice(0, 6) : bookSpines;
+
   return (
     <div className={styles.container}>
       <ScrambleHover text={"Bookshelf"} className={styles.title} />
@@ -75,7 +89,7 @@ export default function BookShelf() {
         <img src={enderDragon} className={styles.dragon}></img>
       </div>
       <div className={styles.bookshelf}>
-        {bookSpines.map((book, idx) => {
+        {visibleBooks.map((book, idx) => {
           return (
             <>
               {idx === 0 && (
@@ -89,7 +103,7 @@ export default function BookShelf() {
                 onClick={() => setSelectedBook(book.book)}
                 selectedBook={selectedBook}
               />
-              {idx === bookSpines.length - 1 && (
+              {idx === visibleBooks.length - 1 && (
                 <img src={gapple} className={styles.bookend}></img>
               )}
             </>

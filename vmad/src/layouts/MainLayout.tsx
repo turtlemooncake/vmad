@@ -19,7 +19,9 @@ export default function MainLayout() {
       >
         <NavBar />
         <Outlet />
-        <Footer />
+        <Footer
+          className={clsx(useBookshelfLayout && styles.bookshelfFooter)}
+        />
       </div>
     </div>
   );

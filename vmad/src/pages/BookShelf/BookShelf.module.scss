@@ -57,15 +57,6 @@
   } /* down */
 }
 
-// @keyframes slideRightToLeft {
-//   0% {
-//     left: 100%; // start completely outside on the right
-//   }
-//   100% {
-//     left: -100px; // end completely outside on the left
-//   }
-// }
-
 .bookshelf::after {
   content: "";
   position: absolute;
@@ -92,4 +83,11 @@
   width: 30px;
   height: 30px;
   margin-right: -2px;
+}
+
+@media (max-width: 510px) {
+  .bookshelf {
+    // transform: scale(0.8);
+    // transform-origin: top center;
+  }
 }

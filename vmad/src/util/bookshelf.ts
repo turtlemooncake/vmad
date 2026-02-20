@@ -63,3 +63,6 @@ export function getRightEdge(
   const shift = Math.tan(toRadians(rotation)) * height;
   return x + width + Math.max(0, shift);
 }
+
+// px
+export const TABLET_SIZE = 510;

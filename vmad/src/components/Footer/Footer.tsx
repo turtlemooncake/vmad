@@ -3,7 +3,11 @@ import ScrambleHover from "../ui/scramble-hover";
 import styles from "./Footer.module.scss";
 import clsx from "clsx";
 
-export default function Footer() {
+interface FooterProps {
+  className?: string;
+}
+
+export default function Footer(props: FooterProps) {
   const location = useLocation();
   // const location = useLocation();
   // const currentPath = location.pathname;
@@ -32,6 +36,7 @@ export default function Footer() {
       className={clsx(
         styles.container,
         forceFooterBottomForMobile && styles.goBottom,
+        props.className,
       )}
     >
       {links.map((link, idx) => {
