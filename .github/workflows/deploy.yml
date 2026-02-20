@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: "25"
           cache: "yarn"
-          cache-dependency-path: vmad/package-lock.json
+          working-directory: "vmad"
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build
