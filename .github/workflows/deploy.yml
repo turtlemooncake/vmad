@@ -40,7 +40,6 @@ jobs:
           cache: "yarn"
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-        cache-dependency-path: "./vmad/yarn.lock"
       - name: Build
         run: yarn build
       - name: Setup Pages
