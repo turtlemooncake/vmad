@@ -27,9 +27,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    # defaults:
-    #   run:
-    #     working-directory: "vmad"
+    defaults:
+      run:
+        working-directory: "vmad"
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: "25"
           cache: "yarn"
-          cache-dependency-path: "vmad/yarn.lock"
+          cache-dependency-path: "yarn.lock"
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build
