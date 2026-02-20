@@ -38,16 +38,10 @@ jobs:
         with:
           node-version: "25"
           cache: "yarn"
-          working-directory: "vmad"
-          cache-dependency-path: "./vmad/package-lock.json"
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-        working-directory: "vmad"
-        cache-dependency-path: "./vmad"
       - name: Build
         run: yarn build
-        working-directory: "vmad"
-        cache-dependency-path: "./vmad"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
