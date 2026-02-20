@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  padding: 30px 0px;
 }
 
 .title {
@@ -19,7 +20,6 @@
 .flySpace {
   width: 100%;
   height: 135px;
-  //border: 1px solid red;
   overflow: hidden;
   position: relative;
 }
@@ -83,11 +83,4 @@
   width: 30px;
   height: 30px;
   margin-right: -2px;
-}
-
-@media (max-width: 510px) {
-  .bookshelf {
-    // transform: scale(0.8);
-    // transform-origin: top center;
-  }
 }

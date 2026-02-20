@@ -8,9 +8,9 @@ const links = ["me", "bookshelf", "posts", "resume"];
 
 export default function NavBar() {
   // eslint-disable-next-line
-  const [theme, setTheme] = useState(
-    document.documentElement.getAttribute("data-theme") || "light",
-  );
+  // const [theme, setTheme] = useState(
+  //   document.documentElement.getAttribute("data-theme") || "light",
+  // );
 
   const [showMobileNav, setShowMobileNav] = useState(false);
 
@@ -21,7 +21,7 @@ export default function NavBar() {
     document.documentElement.setAttribute("data-theme", newTheme);
 
     localStorage.setItem("theme", newTheme);
-    setTheme(newTheme);
+    //setTheme(newTheme);
   };
 
   const toggleMobileNav = () => {

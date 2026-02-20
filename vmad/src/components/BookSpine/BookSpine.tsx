@@ -1,5 +1,5 @@
 import styles from "./BookSpine.module.scss";
-import type { BookData } from "../../util/bookshelf";
+import { type BookData } from "../../util/bookshelf";
 import clsx from "clsx";
 
 interface BookSpineProps {
