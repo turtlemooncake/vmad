@@ -15,7 +15,7 @@ import enderEye from "@/assets/bookshelf/mc-ender-eye-blink.gif";
 import enderDragon from "@/assets/bookshelf/ender-dragon-fly.gif";
 import BookModal from "../../components/BookModal/BookModal";
 import Book from "../../components/Book/Book";
-import ScrambleHover from "../../components/ui/scramble-hover";
+import Title from "../../components/Title/Title";
 
 export default function BookShelf() {
   const [selectedBook, setSelectedBook] = useState<BookData | null>(null);
@@ -84,7 +84,7 @@ export default function BookShelf() {
 
   return (
     <div className={styles.container}>
-      <ScrambleHover text={"Bookshelf"} className={styles.title} />
+      <Title title={"Bookshelf"} subtitle={"Try any book"} />
       <div className={styles.flySpace}>
         <img src={enderDragon} className={styles.dragon}></img>
       </div>

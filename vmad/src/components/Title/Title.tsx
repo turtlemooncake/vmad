@@ -1,11 +1,17 @@
 import styles from "./Title.module.scss";
 import ScrambleHover from "../../components/ui/scramble-hover";
 
-export default function Title() {
+interface TitleProps {
+  title?: string;
+  subtitle?: string;
+}
+export default function Title({ title, subtitle }: TitleProps) {
   return (
-    <>
-      <ScrambleHover text={"Victoria Li"} className={styles.title} />
-      <ScrambleHover text={"Currently: Seattle"} className={styles.subtitle} />
-    </>
+    <div className={styles.module}>
+      {title && <ScrambleHover text={title} className={styles.title} />}
+      {subtitle && (
+        <ScrambleHover text={subtitle} className={styles.subtitle} />
+      )}
+    </div>
   );
 }

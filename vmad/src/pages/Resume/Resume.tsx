@@ -6,7 +6,7 @@ import styles from "./Resume.module.scss";
 export default function Resume() {
   return (
     <div className={styles.container}>
-      <Title />
+      <Title title={"Victoria Li"} subtitle={"Currently: Seattle"} />
       <hr className={styles.divider}></hr>
       <ScrambleHover
         text={"[Experience]"}

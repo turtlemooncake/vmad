@@ -13,7 +13,7 @@ export default function Footer(props: FooterProps) {
   // const currentPath = location.pathname;
   // const concentratedLayouts = new Set(["/", "/me", "/resume", "/posts"]);
   const currentPath = location.pathname;
-  const botFooter = new Set(["/", "/me", "/posts"]);
+  const botFooter = new Set(["/posts"]);
   const forceFooterBottomForMobile = botFooter.has(currentPath);
 
   const links = [

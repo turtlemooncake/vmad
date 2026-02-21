@@ -5,7 +5,7 @@ import Title from "../../components/Title/Title";
 export default function Me() {
   return (
     <div className={styles.container}>
-      <Title />
+      <Title title="Victoria Li" subtitle="Currently: Seattle" />
       <div className={styles.article}>
         <p>Hi, I'm Victoria.</p>
         <p>
