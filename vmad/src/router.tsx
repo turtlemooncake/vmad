@@ -21,5 +21,5 @@ export const router = createBrowserRouter(
       ],
     },
   ],
-  { basename: "/vmad" },
+  // { basename: "/vmad" }, also change here for custom domain name
 );
