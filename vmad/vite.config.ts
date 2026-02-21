@@ -12,5 +12,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/vmad/",
+  base: "/", // /vmad/ was for github pages. revert to base for custom domain
 });
