@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Me from "./pages/Me/Me";
 import Resume from "./pages/Resume/Resume";
@@ -18,6 +18,7 @@ export const router = createBrowserRouter(
         { path: "/posts", element: <PostsLanding /> },
         { path: "/posts/:slug", element: <Post /> },
         { path: "/bookshelf", element: <BookShelf /> },
+        { path: "*", element: <Navigate to="/" replace /> }, // fallback for unserved url; needs to be ordered last here
       ],
     },
   ],
